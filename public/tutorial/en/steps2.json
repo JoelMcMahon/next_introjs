@@ -1,0 +1,15 @@
+{
+  "1": {
+    "element": "",
+    "intro": "",
+    "position": "right",
+    "tooltipClass": "",
+    "highlightClass": ""
+  },
+  "2": {
+    "element": "#menu",
+    "intro": "You can use this menu to change the language and timezones",
+    "tooltipClass": "toolTip",
+    "highlightClass": "myHighlightClass"
+  }
+}

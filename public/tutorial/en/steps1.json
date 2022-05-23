@@ -1,0 +1,21 @@
+{
+  "1": {
+    "element": "",
+    "intro": "",
+    "position": "right",
+    "tooltipClass": "",
+    "highlightClass": ""
+  },
+  "2": {
+    "element": "#menu",
+    "intro": "You can use this menu to change the language and timezones",
+    "tooltipClass": "toolTip",
+    "highlightClass": "myHighlightClass"
+  },
+  "3": {
+    "element": "#tabs",
+    "intro": "Use these tabs to navigate through the 3 day weather forecast",
+    "tooltipClass": "toolTip",
+    "highlightClass": "myHighlightClass"
+  }
+}
