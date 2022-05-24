@@ -1,26 +1,27 @@
 import type { NextPage } from "next";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+// import StepsComponent from "../components/StepsComponent";
 import { useToolTipContext } from "../context/ToolTipContextProvider";
 import { getSteps } from "../services";
-import { Steps } from "intro.js-react";
+import dynamic from "next/dynamic";
+const Steps: any = dynamic((): any => import("intro.js-react"), { ssr: false });
+// import { Steps } from "intro.js-react";
 
 const Home: NextPage = () => {
   const { activeSteps, setActiveSteps, enabled, onExit } = useToolTipContext();
 
-  useEffect(() => {
-    getSteps("tutorial/en/steps1.json").then((response) => {
-      setActiveSteps(Object.values(response));
-    });
-  }, []);
+  const ref = useRef(null);
+  console.log(Steps);
 
-  console.log(activeSteps);
   return (
     <div>
+      {/* <StepsComponent></StepsComponent> */}
       <Steps
         enabled={enabled}
         steps={activeSteps}
         initialStep={0}
         onExit={onExit}
+        ref={ref}
       />
       <div className="header">
         <p className="title">Title</p>

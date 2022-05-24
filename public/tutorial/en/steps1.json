@@ -1,10 +1,10 @@
 {
   "1": {
-    "element": "",
-    "intro": "",
+    "element": "#one",
+    "intro": "This is the title",
     "position": "right",
-    "tooltipClass": "",
-    "highlightClass": ""
+    "tooltipClass": "toolTip",
+    "highlightClass": "myHighlightClass"
   },
   "2": {
     "element": "#menu",
