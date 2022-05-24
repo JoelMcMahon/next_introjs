@@ -7,13 +7,13 @@
     "highlightClass": "myHighlightClass"
   },
   "2": {
-    "element": "#menu",
+    "element": "#two",
     "intro": "You can use this menu to change the language and timezones",
     "tooltipClass": "toolTip",
     "highlightClass": "myHighlightClass"
   },
   "3": {
-    "element": "#tabs",
+    "element": "#three",
     "intro": "Use these tabs to navigate through the 3 day weather forecast",
     "tooltipClass": "toolTip",
     "highlightClass": "myHighlightClass"

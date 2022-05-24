@@ -4,14 +4,23 @@ import { useEffect, useRef } from "react";
 import { useToolTipContext } from "../context/ToolTipContextProvider";
 import { getSteps } from "../services";
 import dynamic from "next/dynamic";
-const Steps: any = dynamic((): any => import("intro.js-react"), { ssr: false });
+const Steps: any = dynamic(
+  (): any => import("intro.js-react").then((mod) => mod.Steps),
+  { ssr: false }
+);
 // import { Steps } from "intro.js-react";
 
 const Home: NextPage = () => {
-  const { activeSteps, setActiveSteps, enabled, onExit } = useToolTipContext();
+  const { activeSteps, setActiveSteps, enabled, setEnabled, onExit } =
+    useToolTipContext();
 
   const ref = useRef(null);
-  console.log(Steps);
+  // console.log(Steps);
+
+  const handleOnClick = () => {
+    setEnabled(true);
+    console.log(enabled);
+  };
 
   return (
     <div>
@@ -21,7 +30,7 @@ const Home: NextPage = () => {
         steps={activeSteps}
         initialStep={0}
         onExit={onExit}
-        ref={ref}
+        // ref={ref}
       />
       <div className="header">
         <p className="title">Title</p>
@@ -44,6 +53,9 @@ const Home: NextPage = () => {
         <div id="five" className="box">
           5
         </div>
+      </section>
+      <section>
+        <button onClick={handleOnClick}>Tutorial</button>
       </section>
     </div>
   );

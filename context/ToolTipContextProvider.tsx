@@ -18,7 +18,7 @@ export const useToolTipContext = () => useContext(toolTipContext);
 const ToolTipContextProvider: React.FC<IToolTipContextProvider> = ({
   children,
 }) => {
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState(true);
   const [activeSteps, setActiveSteps] = useState<any>([
     {
       element: "#tutorialBtn",
@@ -31,19 +31,22 @@ const ToolTipContextProvider: React.FC<IToolTipContextProvider> = ({
   ]);
 
   useEffect(() => {
-    getSteps("tutorial/en/steps1.json")
-      .then((response) => {
-        setActiveSteps(Object.values(response));
-      })
-      .then(() => {
-        setEnabled(true);
-      });
+    // setEnabled(true);
+    getSteps("tutorial/en/steps1.json").then((response) => {
+      setActiveSteps(Object.values(response));
+      // setEnabled(true);
+    });
+    // .then(() => {
+    //   console.log("in");
+    //   setEnabled(true);
+    // });
   }, []);
 
   console.log(activeSteps, "<activeSteps", enabled, "<<<Enabled");
 
   const onExit = () => {
-    setEnabled(false);
+    // setEnabled(false);
+    console.log(enabled);
   };
 
   return (
